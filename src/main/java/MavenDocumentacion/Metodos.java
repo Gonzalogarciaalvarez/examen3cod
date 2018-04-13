@@ -29,5 +29,21 @@ public class Metodos {
             System.out.println("Error al sacar el titulo:");
         }
     }
+    
+    //Metodo para sacar el tiempo que hay actualmente y la temperatura
+    
+    public static void Tiempo(){
+        
+        try{
+            
+            Document doc=Jsoup.connect("https://weather.com/es-ES/tiempo/hoy/l/SPXX0084:1:SP").get();
+            String tiempo=doc.select(".today_nowcard-phrase").text();
+            String grados=doc.select(".today_nowcard-temp").text();
+            System.out.println("Hoy esta "+tiempo+" y hace "+grados);
+            
+        }catch(IOException ex){
+            System.out.println("Error al sacar el tiempo:");
+        }
 
+}
 }
