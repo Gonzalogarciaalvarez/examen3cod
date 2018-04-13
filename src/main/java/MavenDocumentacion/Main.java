@@ -27,6 +27,7 @@ public class Main {
 
 
     //Aqui unicamente debemos llamar a los metodos
+    Tiempo();
     Titulo();
 
     
